@@ -8,12 +8,13 @@
 
 import UIKit
 
-class detailsVC: UIViewController {
+class DetailsVC: UIViewController {
     @IBOutlet weak var tf_company: UILabel!
-    
     @IBOutlet weak var tf_date: UILabel!
     @IBOutlet weak var tf_name: UILabel!
     @IBOutlet weak var tf_icon: UILabel!
+    var jobsTableView : JobsTableVC?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

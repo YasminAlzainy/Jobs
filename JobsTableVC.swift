@@ -12,7 +12,7 @@ class JobsTableVC: UITableViewController {
 
     var jobsArray : [Job]?
     var index = 0
-    
+    var detailsVC : DetailsVC?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +45,6 @@ class JobsTableVC: UITableViewController {
 
         cell.textLabel?.text = jobsArray![indexPath.row].name
         
-
         return cell
     }
     
@@ -90,8 +89,9 @@ class JobsTableVC: UITableViewController {
 
     //In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        detailsVC = sender as? DetailsVC
+        
+        detailsVC!.jobsTableView = self
     }
  
 
