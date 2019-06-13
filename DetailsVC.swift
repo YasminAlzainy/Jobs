@@ -9,6 +9,8 @@
 import UIKit
 
 class DetailsVC: UIViewController {
+    var job : Job?
+
     @IBOutlet weak var tf_company: UILabel!
     @IBOutlet weak var tf_date: UILabel!
     @IBOutlet weak var tf_name: UILabel!
@@ -18,7 +20,10 @@ class DetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        tf_company.text = job?.companyName ?? "default"
+        tf_date.text = job?.creationDate ?? "default"
+        tf_icon.text = job?.icon ?? "default"
+        tf_name.text = job?.name ?? "default"
     }
     
 
